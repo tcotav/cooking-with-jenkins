@@ -20,29 +20,27 @@
 #
 
 # Create jenkins jobs for the cookbooks we want to test
-cookbook_ci "managed_directory" do
-  repository "https://github.com/zts/chef-cookbook-managed_directory.git"
-  branch "master"
-  foodcritic true
-  chefspec true
-  kitchen true
-  junit_results true
-end
+#cookbook_ci "managed_directory" do
+#  repository "https://github.com/zts/chef-cookbook-managed_directory.git"
+#  branch "master"
+#  foodcritic true
+#  chefspec true
+#  kitchen true
+#  junit_results true
+#end
+#
+#cookbook_ci "mcollective" do
+#  repository "https://github.com/zts/cookbook-mcollective.git"
+#  branch "master"
+#  foodcritic true
+#  chefspec false
+#  kitchen true
+#end
 
-cookbook_ci "mcollective" do
-  repository "https://github.com/zts/cookbook-mcollective.git"
+cookbook_ci "chefdk_getting_started" do
+  repository "https://github.com/tcotav/chefdk_getting_started"
   branch "master"
   foodcritic true
   chefspec false
   kitchen true
-end
-
-# test repo with foodcritic errors, and junit-format rspec output
-cookbook_ci "test" do
-  repository "https://github.com/zts/test-cookbook.git"
-  branch "master"
-  foodcritic true
-  chefspec true
-  kitchen false
-  junit_results true
 end
