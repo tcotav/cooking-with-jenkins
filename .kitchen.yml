@@ -3,9 +3,9 @@ driver:
   name: vagrant
 
 driver_config:
-  provider: vmware_fusion
+  provider: virtualbox
   customize:
-    memory: 512
+    memory: 1024
 
 provisioner:
   name: chef_solo
