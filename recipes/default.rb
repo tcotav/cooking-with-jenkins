@@ -17,6 +17,8 @@
 # limitations under the License.
 #
 
+include_recipe "ntp"
+
 # Install everything
 include_recipe "cooking-with-jenkins::install"
 

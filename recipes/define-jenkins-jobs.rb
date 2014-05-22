@@ -35,6 +35,7 @@ cookbook_ci "jdemo" do
   branch "master"
   foodcritic true
   chefspec false
-  serverspec true
+  serverspec false
+  docker true
   kitchen false
 end

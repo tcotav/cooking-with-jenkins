@@ -11,12 +11,8 @@ Vagrant.configure("2") do |config|
 
   config.vm.hostname = "cooking-with-jenkins-berkshelf"
 
-  # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "opscode-ubuntu-13.04"
-
-  # The url from where the 'config.vm.box' box will be fetched if it
-  # doesn't already exist on the user's system.
-  config.vm.box_url = "http://files.vagrantup.com/opscode-ubuntu-13.04.box"
+  config.vm.box = 'ubuntu-12.04'
+  config.vm.box_url = "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_#{config.vm.box}_chef-provisionerless.box"
 
   #config.vm.provider "vmware_fusion" do |v, override|
   #  override.vm.box_url = "http://opscode-vm-bento.s3.amazonaws.com/vagrant/vmware/opscode_ubuntu-13.04_chef-provisionerless.box"
@@ -68,7 +64,7 @@ Vagrant.configure("2") do |config|
 
   # Enabling the Berkshelf plugin. To enable this globally, add this configuration
   # option to your ~/.vagrant.d/Vagrantfile file
-  config.berkshelf.enabled = true
+  #config.berkshelf.enabled = true
 
   # An array of symbols representing groups of cookbook described in the Vagrantfile
   # to exclusively install and copy to Vagrant's shelf.

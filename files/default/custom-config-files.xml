@@ -15,6 +15,9 @@ driver_config:
   provision_command: curl -L https://www.opscode.com/chef/install.sh | bash
   use_sudo: false
 
+forward:
+  - 22:2222
+  - 80:8080
 provisioner:
   require_chef_omnibus: false
 </content>

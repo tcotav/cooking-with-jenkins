@@ -19,7 +19,7 @@
 # limitations under the License.
 #
 
-define :cookbook_ci, :branch => 'master', :foodcritic => true, :chefspec => false, :unit => false, :kitchen => false, :junit_results => false do
+define :cookbook_ci, :branch => 'master', :foodcritic => true, :chefspec => false, :unit => false, :docker => false, :kitchen => false, :junit_results => false do
   job_name = "cookbook-#{params[:name]}"
   repo = params[:repository]
 
@@ -34,6 +34,7 @@ define :cookbook_ci, :branch => 'master', :foodcritic => true, :chefspec => fals
   commands << "bundle exec rake lint" if params[:foodcritic]
   commands << "bundle exec rake spec" if params[:chefspec]
   commands << "bundle exec rake unit" if params[:serverspec]
+  commands << "bundle exec rake docker" if params[:docker]
   commands << "bundle exec rake kitchen:all" if params[:kitchen]
 
   template job_config do

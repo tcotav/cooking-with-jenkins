@@ -15,3 +15,5 @@ depends 'git', '~> 2.5'
 
 # We'll run integration tests using docker
 depends 'docker', '~> 0.20'
+
+depends 'ntp'
